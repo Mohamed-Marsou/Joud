@@ -1,0 +1,89 @@
+/* GLOBAL SCSS FILE */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+
+
+$primary-color: #4caf50; /* Green */
+$secondary-color: #ff9800; /* Orange */
+$dark-color: #333; /* Dark Gray */
+$light-color: #f4f4f4; /* Light Gray */
+$text-color: #444; /* Default Text Color */
+
+$font-primary: 'Roboto', sans-serif;
+$font-secondary: 'Inter', sans-serif;
+
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+
+/* --------------------------
+   3. Mixins
+-------------------------- */
+@mixin flex-center($direction: row, $justify: center, $align: center) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin container($max-width: 1200px) {
+  max-width: $max-width;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+@mixin responsive-font($min-size, $max-size) {
+  font-size: $min-size;
+  @media (min-width: $breakpoint-md) {
+    font-size: $max-size;
+  }
+}
+
+/* --------------------------
+   4. Global Reset
+-------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px; /* Base font size */
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $font-primary;
+  background-color: $light-color;
+  color: $text-color;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+}
+
+
+.hidden {
+  display: none !important;
+}
+
+
