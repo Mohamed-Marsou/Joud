@@ -1,23 +1,43 @@
-@use "../global.scss";
+@use "../global.scss" as global;
 
 nav{
     width: 100%;
-    height: 4rem;
-    border: 1px solid red;
+    height: 4.5rem;
     @include global.flex;
+    font-family: global.$font-primary;
+    font-weight: 500;
+    position: absolute;
+    z-index: 2;
+    color: white;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.041);
     #logo{
         height: 100%;
         width: 20%;
-        
+        @include global.flex();
+        font-size: 1.8rem;
+        cursor: pointer;
     }
     .navLinks{
         height: 100%;
         width: 80%;
-        border: 1px solid red;
         @include global.flex($j:flex-end);
-        gap:1.5rem;
-        padding-right:10%
-
+        gap:2.5rem;
+        padding-right:10%;
+        font-size: 1.1rem;
+        li > a{
+            transition: .3s ease-in-out;
+            &:hover{color:global.$primary-color;}
+        }
+        #contact{
+            background-color:global.$primary-color;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            &:hover
+            {
+                background-color: global.$secondary-color;
+            }
+        }
     }
 
 }
