@@ -2,34 +2,34 @@
 
 .Hero {
     width: 100vw;
-    height: 750px;
+    height: 90vh;
     position: relative;
-    background: url('../../../public/picture/hero-img.webp') center/cover no-repeat;
+    background: url("../../../public/picture/hero-img.webp") center/cover no-repeat;
     @include global.flex();
+    background-attachment: fixed;
     color: white;
     text-align: center;
-    .hero-txt{
+    .hero-txt {
         width: 80%;
         z-index: 2;
         opacity: 0;
         animation: fadeIn 3s ease-in-out 0.5s forwards;
-        h2{
-            font-size:2.5rem;
+        h2 {
+            font-size: 2.5rem;
             margin-bottom: 2rem;
             font-style: italic;
             font-weight: normal;
             margin-top: 8rem;
         }
-        .hero-cta{
-            background-color:global.$primary-color;
+        .hero-cta {
+            background-color: global.$primary-color;
             color: white;
             width: 227px;
             padding: 16px 26px;
             border-radius: 8px;
             font-size: 1.5rem;
-            transition: .3s ease-in-out;
-            &:hover
-            {
+            transition: 0.3s ease-in-out;
+            &:hover {
                 background-color: global.$secondary-color;
             }
         }
@@ -44,7 +44,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5); 
+    background: rgba(0, 0, 0, 0.5);
 }
 
 @keyframes fadeIn {
@@ -56,50 +56,54 @@
     }
 }
 
-
-.Story
-{
+//*-----------  Story
+.Story {
     width: 100%;
-    height: 650px;
+    min-height: 650px;
     @include global.flex();
     flex-direction: column;
-    padding: 0 10%;
+    padding: 0 10% 3rem 10%;
     text-align: center;
     gap: 1rem;
-    h2{
-        font-size: 3.5rem; 
+
+    .abt-logo {
+        width: 420px;
+    }
+    h2 {
+        font-size: 3.5rem;
         color: global.$primary-color;
         font-weight: 500;
         font-style: italic;
     }
-    p{
+    p {
         font-size: 1.3rem;
     }
-    >a{
-        background-color:global.$primary-color;
+    > a {
+        background-color: global.$primary-color;
         color: white;
         padding: 12px 46px;
         font-size: 1.2rem;
         border-radius: 8px;
         margin-top: 1rem;
-        &:hover
-        {
+        &:hover {
             background-color: global.$secondary-color;
         }
     }
 }
+
+//* Tools
 .Tools {
     width: 100%;
     min-height: 600px;
     padding: 10px 5%;
     position: relative;
-    background: url('../../../public/picture/tools.webp') top/cover no-repeat;
+    background: url("../../../public/picture/tools.webp") top/cover no-repeat;
     color: white;
     background-attachment: fixed;
-    
+
     .tools-txt {
-        position: relative;  
-        z-index: 2;          
+        position: relative;
+        z-index: 2;
         width: 100%;
         height: 150px;
         margin-top: 2rem;
@@ -111,7 +115,7 @@
             font-weight: 500;
             font-style: italic;
         }
-        p{
+        p {
             font-size: 16px;
             width: 40%;
             color: #ffffffcb;
@@ -119,40 +123,40 @@
     }
 
     .tools-box {
-        position: relative;  
-        z-index: 2;          
+        position: relative;
+        z-index: 2;
         width: 100%;
-        min-height: 350px;
+        height: 250px;
+        gap: 5rem !important;
         margin-top: 2rem;
         @include global.flex();
         flex-wrap: wrap;
         gap: 1rem;
-      
+
         .swiper-slide {
             text-align: center;
             font-size: 18px;
-            height: 150px !important;
             /* Center slide text vertically */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: fit-content !important;
-            margin: 0 15px;
+            @include global.flex();
 
-          }
-          
-               
-        .tool-container
-        {
+            margin: 0 15px;
+            img {
+                width: 44px;
+            }
+        }
+
+        .tool-container {
             width: 250px;
-            height: 100px ;
-            border-radius: 10px;
-            @include global.flex($j:space-around);
-            padding: 0 1rem;
-            font-size: 1.5rem;
+            height: 80px;
+            border-radius: 4px;
+            @include global.flex($j: space-around);
+            padding: 0 2rem;
+            font-size: 1.3rem;
+            font-family: sans-serif;
             font-weight: 500;
             font-style: italic;
             border: 1px solid rgba(252, 252, 252, 0.281);
+            cursor: pointer;
         }
     }
 
@@ -163,7 +167,132 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: rgba(0, 0, 0, 0.3); 
-        z-index: 1; 
+        background: rgba(0, 0, 0, 0.3);
+        z-index: 1;
     }
+}
+
+
+//* Offers
+.Offers{
+    width: 100%;
+    height: 100vh;
+    background: #021404;
+    color: #fff;
+    .os-heading{
+        width: 600px;
+        height: 14rem;
+        border: 1px solid rgba(255, 255, 255, 0);
+        margin: 0 auto;
+        text-align: center;
+        h2{font-size: 3rem;margin-top: 1rem;font-style: italic;}
+        p{margin-top: 2rem;}
+    }
+    .os-box{
+        width: 90%;
+        height: 60vh;
+        border: 1px solid red;
+        margin: 0 auto;
+        margin-top: 2rem;
+    }
+}
+
+//*-----------  Testimonials
+.Testimonials {
+    width: 100%;
+    min-height: 500px;
+    @include global.flex();
+
+    .testimonials-top-box {
+        width: 90vw;
+        height: 4rem;
+        @include global.flex($j:space-between);
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            font-weight: normal;
+        }
+        button{
+            background: #B99A48;
+            border: none;
+            cursor: pointer;
+            color: #ffffff;
+            width: 3rem;
+            height: 3rem;
+            margin: 0 1rem;
+            font-size: 1.2rem;
+            transition:  .3s ease-in-out;
+      
+            &:hover {
+                font-weight: bold;
+                background: #ffffff;
+                color: #997C38;
+                border: 2px solid #997C38;
+            }
+
+        }
+    }
+
+    .testimonials-btm{
+        width: 90vw;
+        height: 18rem;
+        margin-top: 3rem;
+        @include global.flex();
+        gap: 1.5rem;
+        .testimonial{
+            width: 28rem;
+            height: 16rem;
+            background: #997C38;
+            color: #fff;
+            border-radius: 5px;
+            
+            .td{
+                width: 100%;
+                height: 5rem;
+                @include global.flex($j:flex-start);
+                padding: 0 1rem;
+                gap: .5rem;
+
+                p{
+
+                    font-weight: bolder;
+                    span{
+                        font-weight: bold;
+                    }
+                }
+                
+                .td-img{
+                    width: 3.5rem;
+                    height: 3.5rem;
+                    border-radius: 50px;
+                    overflow: hidden;
+                    img{
+                        object-fit: cover;
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+            }
+            
+            .tb{
+                width: 100%;
+                height:10rem;
+                margin: 1rem 0;
+                padding: 0 .5rem;
+                font-family: sans-serif;
+            }
+        }
+    }
+}
+
+//*-----------  Contact-us
+.contact-us
+{
+    width: 100%;
+    height: 500px;
+    border: 1px solid red;
+
+    position: relative;
+    background: url("../../../public/picture/hero-img.webp") center/cover no-repeat;
 }

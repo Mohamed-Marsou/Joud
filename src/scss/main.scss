@@ -4,4 +4,26 @@ html{
     box-sizing: border-box;
     overflow-x: hidden;
   }
-  
+  /* For WebKit browsers (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #B99A48;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #997C38;
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #B99A48 #f1f1f1;
+}

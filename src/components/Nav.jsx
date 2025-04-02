@@ -1,9 +1,25 @@
 import "../scss/components/nav.scss"
-
+import { useState, useEffect } from "react";
 const Nav = () => {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 150) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
     return (
-      <nav>
-        <div id="logo">Joud</div>
+      <nav className={scrolled ? "Scrolled" : ""}>
+        <div id="logo" >
+          <img src="../../../public/picture/logo.png" alt="" />
+        </div>
         
         <ul className="navLinks">
           <li><a href="#home">Blog</a></li>
